@@ -1,0 +1,731 @@
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Merriweather', serif;
+}
+/* ---------------------------------- */
+
+.side_navlinks ul li{
+    list-style: none;
+}
+.side_navlinks ul li a{
+    text-decoration: none;
+    color: #c5c5c5!important;
+}
+.side_navlinks ul li a:hover{
+    text-decoration: none;
+    color: #D2DE32!important;
+}
+.side_navlinks ul .copyight{
+    color: #c5c5c5!important;
+    font-size: 12px;
+}
+.side_navlinks ul .copyight a{
+    color: #d6df5b!important;
+    font-size: 14px!important;
+}
+
+/*--====== Sidebar ======--*/
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    max-width: 300px;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;background-image: linear-gradient(to bottom, rgba(0, 0, 0), rgba(19, 19, 31));
+    box-shadow: 0 10px 20px -4px #000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
+}
+
+/* when the sidebar has 'show' class */
+#sidebar.show {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.sidebar_content {
+    padding: 0.8rem 0;
+    pointer-events: none;
+    /* so that the Sidebar does not get closed while clicking on sidebar_content */
+}
+
+.sidebar_content a {
+    pointer-events: all;
+    /* so that all the <a> inside sidebar_content are clickable */
+}
+
+.sidebar_body {
+    border-top: 1px dashed var(--text-color);
+    border-bottom: 1px dashed var(--text-color);
+}
+
+.side_navlinks ul {
+    display: grid;
+    gap: 2rem;
+}
+
+.side_navlinks li a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.side_navlinks a:hover {
+    opacity: 1;
+}
+
+/*---- Sidebar-Toggler ----*/
+.sidebar_toggler {
+    position: fixed;
+    top: 4vh;
+    right: 3vw;
+    width: 1.75rem;
+    height: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sidebar_toggler span {
+    background-color: #ddd;
+    width: 100%;
+    height: 2.4px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    /* so that it doesn't overlap the sidebar_toggler */
+}
+
+/* if the sidebar has 'show' class then their adjacent-sibling (i.e., sidebar_toggler) will... */
+#sidebar.show + .sidebar_toggler {
+    justify-content: center;
+}
+
+#sidebar.show + .sidebar_toggler span {
+    margin-top: -1.2px;
+    margin-bottom: -1.2px;
+}
+
+#sidebar.show + .sidebar_toggler span:first-child {
+    transform: rotate(45deg);
+}
+
+#sidebar.show + .sidebar_toggler span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+#sidebar.show + .sidebar_toggler span:last-child {
+    transform: rotate(-45deg);
+}
+
+/* =========================== */
+
+
+body{
+    background-color: #13131f!important;
+    font-family: 'Merriweather', serif;
+    color: white;
+}
+body h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #D2DE32;
+}
+
+/* =========================== */
+
+.section_one {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.section_one .section_one_inner span{
+    color: #D2DE32;
+}
+.section_one .section_one_inner a{
+    background: #ffffff;
+    transition: .4s;
+}
+.section_one .section_one_inner a:hover{
+    background: #D2DE32;
+    color: black;
+    box-shadow: 8px 8px 12px -3px rgba(0,0,0,0.75);
+}
+
+/* ========================= */
+
+.section_two{
+    width: 100%;
+    height: 40vh;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D2DE32;
+    background-image: linear-gradient(to bottom, #00000080, #13131fe6), url('/assets/images/Bg-images/bg5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  /*  this is where the magic happens:  */
+    background-attachment: fixed;
+}
+.section_two .section_two_inner h3{
+    color: white;
+}
+
+/* ================================ */
+
+.section_three{
+    width: 100%;
+    height: 100vh;
+}
+.section_three .section_three_inner{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* =========================== */
+
+.section_four{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-image: linear-gradient(to bottom, #00000080, #13131fe6), url('/assets/images/Bg-images/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  /*  this is where the magic happens:  */
+    background-attachment: fixed;
+}
+.section_four .section_four_inner i{
+    font-size: 60px;
+    padding: 50px;
+}
+.section_four .section_four_inner span{
+    font-size: 25px;
+}
+.section_four .section_four_inner .Services_box{
+    padding: 80px 0px;
+}
+
+/* =========================== */
+
+.section_five{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.section_five .section_five_inner a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.section_five .section_five_inner .facebook{
+    padding: 70px 0px;
+    background-color: rgb(24, 119, 242);
+}
+.section_five .section_five_inner .youtube{
+    padding: 70px 0px;
+    background-color: rgb(205, 32, 31);
+}
+.section_five .section_five_inner .instagram{
+    padding: 70px 0px;
+    background: rgb(255,179,0);
+    background: linear-gradient(13deg, rgba(255,179,0,1) 0%, rgba(131,58,180,1) 50%, rgba(88,81,219,1) 100%);
+}
+.section_five .section_five_inner .twitter{
+    padding: 70px 0px;
+    background-color: rgb(29 161 242);
+}
+
+
+/* ============================= */
+
+.section_six{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #00000080, #13131fe6), url('/assets/images/Bg-images/bg2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  /*  this is where the magic happens:  */
+    background-attachment: fixed;
+}
+
+.section_six_inner {
+    width: 100%;
+    height: 100%;
+    font-family: 'Merriweather', serif;
+    color: white;
+}
+
+
+/* ===================== */
+.section_seven{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.section_seven_inner{
+    color: white;
+}
+
+
+
+/* media query */
+
+
+/* extra small */
+@media only screen and (min-width: 200px) and (max-width: 340px) {
+   
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 0!important;
+        --bs-gutter-y: 0!important;
+    }
+
+    body{
+        font-size: 10px!important;
+    }
+    body h2{
+        font-size: 25px;
+    }
+
+    /* section1 */
+    .section_one {
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+        font-size: 10px;
+    }
+    .section_one .section_one_inner a{
+        font-size: 10px;
+        margin-right: 15px!important;
+        padding: 7px 25px!important;
+    }
+
+
+
+    /* section2 */
+    .section_two{
+        width: 100%;
+        height: 20vh;
+    }
+    .section_two .section_two_inner h2{
+        font-size: 14px;
+    }
+    .section_two .section_two_inner h3{
+        color: white;
+        font-size: 10px;
+    }
+    .section_two .section_two_inner h5{
+        font-size: 9px;
+    }
+
+
+    /* scetion3 */
+    .section_three{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+        /* margin-bottom: 270px; */
+    }
+    .section_three .section_three_inner{
+        width: 100%;
+        height: 100vh;
+        font-family: 'Merriweather', serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* section4 */
+    .section_four{
+        width: 100%;
+        height: 100vh;
+    }
+    .section_four .section_four_inner i{
+        font-size: 30px!important;
+        padding: 0px!important;
+    }
+    .section_four .section_four_inner span{
+        font-size: 16px;
+    }
+    .section_four .section_four_inner .Services_box{
+        padding: 35px 0px;
+    }
+
+
+    /* section5 */
+    .section_five{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .section_five .section_five_inner a{
+        font-size: 15px;
+    }
+    
+    .section_five .section_five_inner .facebook{
+        padding: 35px 0px;
+        background-color: rgb(24, 119, 242);
+    }
+    .section_five .section_five_inner .youtube{
+        padding: 35px 0px;
+        background-color: rgb(205, 32, 31);
+    }
+    .section_five .section_five_inner .instagram{
+        padding: 35px 0px;
+        background: rgb(255,179,0);
+        background: linear-gradient(13deg, rgba(255,179,0,1) 0%, rgba(131,58,180,1) 50%, rgba(88,81,219,1) 100%);
+    }
+    .section_five .section_five_inner .twitter{
+        padding: 35px 0px;
+        background-color: rgb(29 161 242);
+    }
+
+
+
+    /* section-6 */
+    .section_six .section_six_inner h2{
+        padding: 20px 0px;
+    }
+    .section_six .section_six_inner h3{
+        color: white;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    /* section7 */
+    .section_seven{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .section_seven .section_seven_inner a{
+        font-size: 10px;
+        padding: 7px 25px;
+    }
+
+}
+
+
+/* small */
+@media only screen and (min-width: 341px) and (max-width: 576px) {
+   
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 1.5rem!important;
+        --bs-gutter-y: 0!important;
+    }
+
+    body{
+        /* font-size: 16px!important; */
+    }
+    body h2{
+        font-size: 24px;
+    }
+
+    /* section1 */
+    .section_one {
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .section_one .section_one_inner a{
+        font-size: 10px;
+        margin-right: 15px!important;
+        padding: 7px 25px!important;
+        font-size: 15px;
+    }
+
+
+
+    /* section2 */
+    .section_two{
+        width: 100%;
+        height: 20vh;
+    }
+    .section_two .section_two_inner h2{
+        font-size: 16px;
+    }
+    .section_two .section_two_inner h3{
+        color: white;
+        font-size: 12px;
+    }
+    .section_two .section_two_inner h5{
+        font-size: 10px;
+    }
+
+
+    /* scetion3 */
+    .section_three{
+        width: 100%;
+        height: 100vh;
+        padding: 90px 10px 0px 10px;
+        /* margin-bottom: 270px; */
+    }
+    .section_three .section_three_inner{
+        width: 100%;
+        height: 100vh;
+        font-family: 'Merriweather', serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px!important;
+    }
+    .section_three_inner p{
+        font-size: 13px;
+    }
+
+
+    /* section4 */
+    .section_four{
+        width: 100%;
+        height: 100vh;
+        padding-top: 180px;
+    }
+    .section_four .section_four_inner i{
+        font-size: 30px!important;
+        padding: 0px!important;
+    }
+    .section_four .section_four_inner span{
+        font-size: 16px;
+    }
+    .section_four .section_four_inner .Services_box{
+        padding: 35px 0px;
+    }
+
+
+    /* section5 */
+    .section_five{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .section_five .section_five_inner a{
+        font-size: 15px;
+    }
+    
+    .section_five .section_five_inner .facebook{
+        padding: 35px 0px;
+        background-color: rgb(24, 119, 242);
+    }
+    .section_five .section_five_inner .youtube{
+        padding: 35px 0px;
+        background-color: rgb(205, 32, 31);
+    }
+    .section_five .section_five_inner .instagram{
+        padding: 35px 0px;
+        background: rgb(255,179,0);
+        background: linear-gradient(13deg, rgba(255,179,0,1) 0%, rgba(131,58,180,1) 50%, rgba(88,81,219,1) 100%);
+    }
+    .section_five .section_five_inner .twitter{
+        padding: 35px 0px;
+        background-color: rgb(29 161 242);
+    }
+
+
+
+    /* section-6 */
+    .section_six .section_six_inner h2{
+        padding: 20px 0px;
+    }
+    .section_six .section_six_inner h3{
+        color: white;
+        font-size: 18px;
+        padding-left: 20px;
+    }
+
+    /* section7 */
+    .section_seven{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .section_seven .section_seven_inner a{
+        font-size: 13px;
+        padding: 7px 25px;
+    }
+
+}
+
+/* medium */
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+   
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 0!important;
+        --bs-gutter-y: 0!important;
+    }
+
+    body{
+        font-size: 16px!important;
+    }
+    body h2{
+        font-size: 30px;
+    }
+
+    /* section1 */
+    .section_one {
+        width: 100%;
+        height: 100vh;
+        /* padding: 10px; */
+        font-size: 15px;
+    }
+    .section_one .section_one_inner a{
+        font-size: 10px;
+        margin-right: 15px!important;
+        padding: 7px 25px!important;
+        font-size: 15px;
+    }
+
+
+
+    /* section2 */
+    .section_two{
+        width: 100%;
+        height: 30vh;
+    }
+    .section_two .section_two_inner h2{
+        font-size: 30px;
+    }
+    .section_two .section_two_inner h3{
+        color: white;
+        font-size: 12px;
+    }
+    .section_two .section_two_inner h5{
+        font-size: 16px;
+    }
+
+
+    /* scetion3 */
+    .section_three{
+        width: 100%;
+        height: 100vh;
+        /* padding: 10px; */
+        /* margin-bottom: 270px; */
+    }
+    .section_three .section_three_inner{
+        width: 100%;
+        height: 100vh;
+        font-family: 'Merriweather', serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px!important;
+    }
+    .section_three_inner p{
+        font-size: 13px;
+    }
+
+
+    /* section4 */
+    .section_four{
+        width: 100%;
+        height: 100vh;
+    }
+    .section_four .section_four_inner i{
+        font-size: 30px!important;
+        padding: 0px!important;
+    }
+    .section_four .section_four_inner span{
+        font-size: 16px;
+    }
+    .section_four .section_four_inner .Services_box{
+        padding: 35px 0px;
+    }
+
+
+    /* section5 */
+    .section_five{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .section_five .section_five_inner a{
+        font-size: 15px;
+    }
+    
+    .section_five .section_five_inner .facebook{
+        padding: 35px 0px;
+        background-color: rgb(24, 119, 242);
+    }
+    .section_five .section_five_inner .youtube{
+        padding: 35px 0px;
+        background-color: rgb(205, 32, 31);
+    }
+    .section_five .section_five_inner .instagram{
+        padding: 35px 0px;
+        background: rgb(255,179,0);
+        background: linear-gradient(13deg, rgba(255,179,0,1) 0%, rgba(131,58,180,1) 50%, rgba(88,81,219,1) 100%);
+    }
+    .section_five .section_five_inner .twitter{
+        padding: 35px 0px;
+        background-color: rgb(29 161 242);
+    }
+
+
+
+    /* section-6 */
+    .section_six .section_six_inner h2{
+        padding: 20px 0px;
+    }
+    .section_six .section_six_inner h3{
+        color: white;
+        font-size: 18px;
+        padding-left: 20px;
+    }
+
+    /* section7 */
+    .section_seven{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+    }
+    .section_seven .section_seven_inner a{
+        font-size: 13px;
+        padding: 7px 25px;
+    }
+
+}
+
